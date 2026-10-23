@@ -28,26 +28,26 @@ Complete write-ups for **Milima CTF Arena**, held at the EastCon / CyberSecurity
 
 | ID | Challenge | Points | Category / Type | Status | Vulnerability |
 |---|---|---|---|---|---|
-| 1 | [Mini Ledger API](writeups/01-mini-ledger-api.md) | 68 | Web / API | ✅ Solved | Exploit details not recorded in our notes |
+| 1 | [Mini Ledger API](writeups/01-mini-ledger-api.md) | 68 | Web / API | ✅ Solved | Broken access control: transfer endpoint trusts a client-supplied `from` account |
 | 2 | [Transaction Status Checker](writeups/02-transaction-status-checker.md) | 310 | Web / blind SQLi | ✅ Solved | Boolean-blind SQL injection (SQLite) |
 | 3 | [Payment Ops Console](writeups/03-payment-ops-console.md) | 316 | Web / RCE | ✅ Solved | OS command injection + sudo (`env`) privesc |
 | 4 | [Branch Ops Box](writeups/04-branch-ops-box.md) | 352 | SMB / SNMP | ❌ Unsolved | Backup-share creds uncracked; SNMP cred source dead |
 | 5 | [Branch Web Host](writeups/05-branch-web-host.md) | 198 | Web → SSH | ✅ Solved | Directory listing exposed a backup file leaking SSH creds |
-| 6 | [NetOps Console](writeups/06-netops-console.md) | 66 | Web/Network | ✅ Solved | Exploit details not recorded in our notes |
+| 6 | [NetOps Console](writeups/06-netops-console.md) | 66 | Web/Network | ✅ Solved | Default admin credentials (`admin:admin123`) |
 | 7 | [Portal Under Construction](writeups/07-portal-under-construction.md) | 66 | Web / exposed .git | ✅ Solved | Exposed `.git` dir; secret in a deleted committed file |
 | 8 | [Payroll Audit Dump](writeups/08-payroll-audit-dump.md) | 400 | Web / crypto | ❌ Unsolved | Found leaked hashes; custom passwords uncrackable in time |
-| 9 | [Member Statements](writeups/09-member-statements.md) | 74 | Web | ✅ Solved | Exploit details not recorded in our notes |
-| 10 | [Ledger API Auth](writeups/10-ledger-api-auth.md) | 70 | Web / API auth | ✅ Solved | Exploit details not recorded in our notes |
+| 9 | [Member Statements](writeups/09-member-statements.md) | 74 | Web | ✅ Solved | IDOR on `/statement?account_id=` leaks another account's statement |
+| 10 | [Ledger API Auth](writeups/10-ledger-api-auth.md) | 70 | Web / API auth | ✅ Solved | JWT `alg:none` forgery → forged `role:admin` token |
 | 11 | [Ops Box](writeups/11-ops-box.md) | 72 | Pwn / Linux privesc | ✅ Solved | World-writable root-run cron script |
 | 12 | [Account Recovery](writeups/12-account-recovery.md) | 206 | Web / broken auth | ✅ Solved | Predictable password-reset token (`md5(user+epoch)`) |
 | 13 | [Privilege Escalation](writeups/13-privilege-escalation.md) | 96 | Pwn / privesc | ❌ Unsolved | Gated on uncracked foothold password (see id 14) |
 | 14 | [Target Box Recon](writeups/14-target-box-recon.md) | 96 | Recon / brute-force | ❌ Unsolved | Weak-cred brute; FTP throttling capped rockyou coverage |
 | 15 | [HR File Server](writeups/15-hr-file-server.md) | 218 | SMB enumeration | ✅ Solved | Password leaked in account description; hidden share |
-| 16 | [Link Preview Tool](writeups/16-link-preview-tool.md) | 226 | Web | ✅ Solved | Exploit details not recorded in our notes |
-| 17 | [Newsletter Preview](writeups/17-newsletter-preview.md) | 190 | Web | ✅ Solved | Exploit details not recorded in our notes |
+| 16 | [Link Preview Tool](writeups/16-link-preview-tool.md) | 226 | Web / SSRF | ✅ Solved | SSRF in the URL-preview fetcher (exact flag string not preserved) |
+| 17 | [Newsletter Preview](writeups/17-newsletter-preview.md) | 190 | Web / SSTI | ✅ Solved | Jinja2 server-side template injection leaks `FLAG` env |
 | 18 | [Member Directory](writeups/18-member-directory.md) | 194 | Web / SQLi | ✅ Solved | SQL injection in `/search`; cracked unsalted MD5 |
 | 19 | [Profile Picture Upload](writeups/19-profile-picture-upload.md) | 222 | Web / file upload | ❌ Unsolved | Content-Type-only image check bypassed; flag file not located |
-| 20 | [Feedback Wall](writeups/20-feedback-wall.md) | 194 | Web | ✅ Solved | Exploit details not recorded in our notes |
+| 20 | [Feedback Wall](writeups/20-feedback-wall.md) | 194 | Web / XSS | ✅ Solved | Reflected XSS via `/?msg=` captured by an admin review bot |
 
 ## Highlights
 

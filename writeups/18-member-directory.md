@@ -14,7 +14,7 @@ SQL injection in the `/search` endpoint of the member directory app.
 4. Logged in as the manager, which revealed the flag.
 
 ## Flag
-Submitted & accepted (value not recorded in notes).
+`flag{38b65355-85e5-4885-9811-fe11393fedc0}`
 
 ## Lessons
 - Parameterize queries; never concatenate user input into SQL.
